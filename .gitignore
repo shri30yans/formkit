@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.formkit_out/
+.tools/
+*.stl
+*.step
+*.3mf
+*.glb
+dist/
+site/
+*.egg-info/
+.DS_Store
+examples/out/
+.cursor/

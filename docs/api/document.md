@@ -1,0 +1,3 @@
+# Document
+
+::: formkit.document.Document

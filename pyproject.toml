@@ -1,0 +1,37 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "formkit"
+version = "0.5.0"
+description = "Body-centric parametric CAD — shapes, hull, offset, placement-first solids"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+dependencies = [
+  "build123d>=0.9.0",
+  "numpy>=1.26",
+  "scipy>=1.11",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0", "ruff>=0.8"]
+docs = [
+  "mkdocs>=1.6",
+  "mkdocs-material>=9.5",
+  "mkdocstrings[python]>=0.27",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/formkit"]
+
+[tool.hatch.build.targets.wheel.sources]
+"src/formkit" = "formkit"
+
+[tool.hatch.build.targets.sdist]
+include = ["src/formkit", "README.md", "docs", "examples"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
